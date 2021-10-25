@@ -107,7 +107,7 @@ docker-compose up
 The app will be listening on port 5000 i.e. [localhost:5000](http://127.0.0.1:5000/)
 
 # Deploying the app for production
-## Prerequisite 
+## Prerequisites
 - AWS Account - If you dont have one you can create one a Free Tier at their official [website](https://aws.amazon.com/free/)
 - Terraform - For provisioning infrastructure in AWS
 - Github Account for storing repo
