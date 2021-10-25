@@ -158,7 +158,7 @@ After this has completed, look up the external IP address for the recipes micros
 kubectl proxy 
 ```
 
-Now open your web browser at that IP address, input in your browser. For example, if your IP address is 40.112.161.104, then point your browser at http://40.112.161.104/. Just remember to use your own external IP address. You should now see the api running.
+Now open your web browser at that IP address, input in your browser. For example, if your IP address is 40.112.161.104, then point your browser at [40.112.161.104](http://40.112.161.104/). Just remember to use your own external IP address. You should now see the api running.
 
 
 You can also use Kubernetes dashboard for [Graphic UI](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login). After opening the dashboard, you'll come to its authentication screen. You authenticate it by selecting you Kubeconfig which you can find in your home directory at ~/.kube/config. For information about deploying with Kubernetes you can review their [official documentation](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
