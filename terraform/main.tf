@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "ecr_repository" {
-  name                 = "flask-wow"
+  name                 = "flask-again"
   image_tag_mutability = "IMMUTABLE"
 }
 
