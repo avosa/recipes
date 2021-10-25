@@ -121,6 +121,7 @@ cd recipes/terraform
 Set values in providers.tf then run:
 ```bash
 terraform init
+
 terraform apply -auto-approve
 ```
 
@@ -135,8 +136,8 @@ KUBE_CONFIG_DATA
 ```
 More informnation on setting encrypted secrets on github can be found on [Github's official documentation](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 
-* To get KUBE_CONFIG_DATA secrets you need Kubernetes and kubectl installed.
-* To generate KUBE_CONFIG_DATA values open your preferred command line tool and run: 
+* To get `KUBE_CONFIG_DATA` secrets you need Kubernetes and kubectl installed.
+* To generate `KUBE_CONFIG_DATA` values open your preferred command line tool and run: 
 ```bash
  cat $HOME/.kube/config | base64
  ```
@@ -145,6 +146,7 @@ For more information regarding KUBE_CONFIG_DATA you can read their [official doc
 4. Enter the repo if you haven't already 
 ```bash 
 cd recipes
+
 sudo rm -r .git 
 ```
 5. Push the repo
