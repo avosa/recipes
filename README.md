@@ -26,14 +26,22 @@ Add link to Heroku here
 - Python 3.6
 - Flask
 - Postgres 9.6
+- Docker 
+- Docker-compose
+- AWS
+- Github, Github Actions
+- Terraform
+- Kubernetes
 
-## Setup
+## Getting Started
 
-To use the application, ensure that you have python 3.6+, clone the repository to your local machine. Open your git commandline and run
+To use the application, ensure that you have python 3.6+, docker, terraform and kubernetes installed, clone the repository to your local machine. The app can be run in the following ways:
+
+## Method 1 - Development
 
 1. Clone the repository
    ```bash
-    git clone https://Ssemaganda@bitbucket.org/Ssemaganda/recipes.git
+    git clone https://github.com/avosa/recipes.git
    ```
 
 2. Enter the project directory
@@ -50,7 +58,7 @@ To use the application, ensure that you have python 3.6+, clone the repository t
    ```
 5. Then install all the required dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
 6. Install postgres if you don't already have it. Preferably Postgres 10.1.
 
@@ -58,34 +66,56 @@ To use the application, ensure that you have python 3.6+, clone the repository t
 
    #### For the test Database
    ```bash
-   createdb test_db
+   createdb recipes_test_db
    ```
 
    #### For the development Database
    ```bash
-   createdb recipe_db
+   createdb recipes_dev_db
    ```
-
-8. Set variables
-   ```bash
-   export SECRET_KEY='<a random character string>'
-   export FLASK_CONFIG=development
-   export DATABASE_URL='postgresql://localhost/recipe_db'
-   ```
-
-9.  Run Migrations using these commands, in that order:
+8.  Run Migrations using these commands, in that order:
       ```bash
-      python manage.py db init
-      python manage.py db migrate
-      python manage.py db upgrade
+      python3 manage.py db init
+      python3 manage.py db migrate
+      python3 manage.py db upgrade
       ```
 
-10. To test the application, run the command:
+11. To test the application, run the command:
       ```bash
       pytest --cov-report term --cov=app
       ```
 
-11. To start the server, run the command:
+12. To start the server, run the command:
       ```bash
-      python manage.py runserver
+      export FLASK_APP=manage.py
+
+      export FLASK_DEBUG=1
+
+      flask run
       ```
+## Method 2 - Development
+This method helps us acertain that the app dockerized is running well.
+We are going to make use of Docker and docker compose
+1. Enter the project directory
+   ```bash
+   cd recipes
+   ```
+2. Run the command below:
+```bash
+docker compose up
+```
+The app will be listening on port 5000 i.e.[localhost:5000](http://127.0.0.1:5000/)
+
+# Deploying the app for production
+## Prerequisite 
+- AWS Account - If you dont have one you can create one a Free Tier at [AWS's website](https://aws.amazon.com/free/)
+- Terraform - For provisioning infrastructure in AWS
+- Github Account for storing repo
+
+Assuming you have the above installed/set up:
+1. Create an account on github
+2. Enter the repo if you haven't already
+3. Push the repo
+4. Set secrets
+
+
