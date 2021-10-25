@@ -149,7 +149,8 @@ cd recipes
 
 sudo rm -r .git 
 ```
-5. Push the repo
+5. Push the repo.
+
 Once you have pushed your repo you can track the progress of the deployment by clicking `Actions` button just below your github repo.
 
 ### Testing your deployed api
