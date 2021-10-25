@@ -1,6 +1,6 @@
 resource "aws_ecr_repository" "ecr_repository" {
-  name                 = "flask-again"
-  image_tag_mutability = "IMMUTABLE"
+  name                 = "flask-againn"
+  image_tag_mutability = "MUTABLE"
 }
 
 resource "aws_ecr_repository_policy" "demo-repo-policy" {
