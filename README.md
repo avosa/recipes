@@ -73,7 +73,7 @@ To use the application, ensure that you have python 3.6+, docker, terraform and 
    ```bash
    createdb recipes_dev_db
    ```
-8.  Run Migrations using these commands, in that order:
+8.  Run Migrations sequentially using these commands:
       ```bash
       python3 manage.py db init
       python3 manage.py db migrate
@@ -107,6 +107,9 @@ docker-compose up
 The app will be listening on port 5000 i.e. [localhost:5000](http://127.0.0.1:5000/)
 
 # Deploying the app for production
+## Method 3 - Production
+Here we will have a taste of the app on production using CI/CD pipeline
+
 ## Prerequisites
 - AWS Account - If you dont have one you can create one a Free Tier at their official [website](https://aws.amazon.com/free/)
 - Terraform - For provisioning infrastructure in AWS
