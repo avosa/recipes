@@ -102,20 +102,54 @@ We are going to make use of Docker and docker compose
    ```
 2. Run the command below:
 ```bash
-docker compose up
+docker-compose up
 ```
-The app will be listening on port 5000 i.e.[localhost:5000](http://127.0.0.1:5000/)
+The app will be listening on port 5000 i.e. [localhost:5000](http://127.0.0.1:5000/)
 
 # Deploying the app for production
 ## Prerequisite 
-- AWS Account - If you dont have one you can create one a Free Tier at [AWS's website](https://aws.amazon.com/free/)
+- AWS Account - If you dont have one you can create one a Free Tier at their official [website](https://aws.amazon.com/free/)
 - Terraform - For provisioning infrastructure in AWS
 - Github Account for storing repo
 
 Assuming you have the above installed/set up:
-1. Create an account on github
-2. Enter the repo if you haven't already
-3. Push the repo
-4. Set secrets
+1. Step 1 - Provisioning using Terraform
+Create docker repository on AWS using terraform
+```bash
+cd recipes/terraform
+```
+Set values in providers.tf then run:
+```bash
+terraform init
+terraform apply -auto-approve
+```
+
+2. Create an empty repo on github
+3. Set secrets
+- Navigate to Settings > Secrets > New Repository Secret > then create the following secrets inputing appropriate values:
+```bash
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_REGION
+KUBE_CONFIG_DATA
+```
+More informnation on setting encrypted secrets on github can be found on [Github's official documentation](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
+
+* To get KUBE_CONFIG_DATA secrets you need Kubernetes and kubectl installed.
+* To generate KUBE_CONFIG_DATA values open your preferred command line tool and run: 
+```bash
+ cat $HOME/.kube/config | base64
+ ```
+For more information regarding KUBE_CONFIG_DATA you can read their [official documentation](https://github.com/marketplace/actions/kubectl-for-eks#secrets).
+
+4. Enter the repo if you haven't already 
+```bash 
+cd recipes
+sudo rm -r .git 
+```
+5. Push the repo
+Once you have pushed your repo you can track the progress of the deployment by clicking `Actions` button just below your github repo.
+
+
 
 
