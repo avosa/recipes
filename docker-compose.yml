@@ -1,0 +1,26 @@
+version: "3.3"  
+services:
+  api:
+    image: flask
+    build: 
+      context: . # use current directory; if it was in another dir say docker it could be context: ./docker
+      dockerfile: Dockerfile
+    container_name: flask_api_container
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/usr/src/app
+      - dependancies_cache:/dependancies
+    env_file:
+      - ".env"
+    links:
+      - redis
+
+
+  redis:
+    image: redis
+    container_name: redis_container
+
+
+volumes:
+  dependancies_cache:
