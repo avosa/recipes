@@ -2,8 +2,6 @@
 
 This is an API for a Recipes service using Flask. Users can register an account and login to create, edit, view and delete recipe categories and recipes in those categories.
 
-Add link to Heroku here
-
 | EndPoint                                          | Functionality                                    |
 | ------------------------------------------------- | ------------------------------------------------ |
 | [ POST /auth/login/ ](#)                          | Logs a user in                                   |
@@ -165,7 +163,8 @@ kubectl proxy
 Now open your web browser at that IP address, input in your browser. For example, if your IP address is 40.112.161.104, then point your browser at [40.112.161.104](http://40.112.161.104/). Just remember to use your own external IP address. You should now see the api running.
 
 
-You can also use Kubernetes dashboard for [Graphic UI](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login). After opening the dashboard, you'll come to its authentication screen. You authenticate it by selecting your Kubeconfig which you can find in your home directory at ~/.kube/config. For information about deploying with Kubernetes you can review their [official documentation](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
+You can also use Kubernetes dashboard for [Graphic UI](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login). After opening the dashboard, you'll come to its authentication screen. You authenticate it by selecting your Kubeconfig which you can find in your home directory at ~/.kube/config. 
+For more information about deploying with Kubernetes you can review their [official documentation](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
 
 
 
