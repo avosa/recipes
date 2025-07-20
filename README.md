@@ -164,7 +164,7 @@ Now open your web browser at that IP address, input in your browser. For example
 
 
 You can also use Kubernetes dashboard for [Graphic UI](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login). After opening the dashboard, you'll come to its authentication screen. You authenticate it by selecting your Kubeconfig which you can find in your home directory at ~/.kube/config. 
-For more information about deploying with Kubernetes you can review their [official documentation](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/).
+For more information about deploying with Kubernetes you can review their [official documentation](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). 
 
 
 
